@@ -3,7 +3,7 @@ name: docs-website
 on:
   push:
     branches:
-      - docs-generation #TODO: Change this to main before merge
+      - main
 
 permissions:
   contents: read
