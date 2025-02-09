@@ -1,7 +1,24 @@
+"""
+test_runner.py
 
+This module provides a function, `run_all_tests()`, that executes all tests
+under the './tests' folder using pytest. 
+
+Usage:
+    To run tests, execute this file:
+        $ python test_runner.py
+"""
 import subprocess
 
 def run_all_tests() -> tuple[bool, str]:
+    """
+    Runs all tests in the ./tests folder using pytest.
+
+    Returns:
+        A tuple (passed, logs):
+          - passed (bool): True if all tests passed, False otherwise.
+          - logs (str): Stores the logs when tests are executed.
+    """
    
     # Defines the command to run on ./tests folder.
     cmd = ["pytest", "./tests"] 
