@@ -13,6 +13,17 @@
   ```sh
   python -m unittest discover test
   ```
+### API Connection for commit status updates
+
+The setCommitStatus function updates commit statuses using the GitHub API. 
+
+Prerequisites: 
+
+  - Install dependencies: pip install requests python-dotenv
+  - GitHub personal access token
+  - .env file: TOKEN = your_personal_access_token
+
+
 
 
 ## Workflow
@@ -31,7 +42,7 @@ Commits should be structured following the format: `typeprefix(function or file)
 This workflow ensured an organized and efficient development process.
 
 ### Statement of contribution
-- **Alexandra Ejnervall**: 
+- **Alexandra Ejnervall**: GitHub API Connection for commit status updates
 - **Eren Özogul**: 
 - **Ryll Åman**: 
 - **Sebastian Kristoffersson**: 
