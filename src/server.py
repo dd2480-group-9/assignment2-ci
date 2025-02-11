@@ -42,20 +42,29 @@ def post_webhook():
     if not data:
         return jsonify({'error': 'No JSON payload provided'}), 400
 
-    # Extract repository info and commit hash.
+    # Gets repository details 
     repo_info = data.get('repository')
+    repo_url = repo_info.get('clone_url')
+    commit_id = data.get('after')  # The commit SHA after the push
+
+
     if not repo_info:
         return jsonify({'error': 'Repository info not found in payload'}), 400
 
-    repo_url = repo_info.get('clone_url')
-    commit_id = data.get('after')  # The commit SHA after the push
+  
     if not repo_url or not commit_id:
         return jsonify({'error': 'Repository URL or commit ID missing'}), 400
         
+    
+    # Setting up a temporary directory
     temp_dir = os.path.join(os.getcwd(), "tmp")
+
+    # Remove temporary directory if it exists, then recreates it
     if os.path.exists(temp_dir):
         shutil.rmtree(temp_dir)
     os.makedirs(temp_dir, exist_ok=True)
+
+
 
     try:
         # Clone repository and check out the specified commit 
