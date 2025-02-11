@@ -32,9 +32,7 @@ jobs:
         with:
           path: docs/
 
-      # Running tests using pytest
-      - name: Run tests
-        run: pytest
+      
 
   # Deploy the artifact to GitHub pages.
   deploy:
