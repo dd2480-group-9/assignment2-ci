@@ -18,14 +18,19 @@ jobs:
         with:
           python-version: '3.13'
 
-      # TODO: make sure this works with any other packages later on
-      - run: pip install pdoc
+      # Adding dependencies
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
       # Build the documentation of the src/ directory with google docstring style
       - run: pdoc src/ -o docs/ -d google
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/
+
+      
 
   # Deploy the artifact to GitHub pages.
   deploy:
