@@ -10,15 +10,34 @@ import git # gitpython
 
 app = Flask(__name__)  # Creates one instance of flask
 
-# Defining the initial route
+
 @app.route('/')
 def index():
-    
+    """
+    Default route that returns a greeting message.
+
+    This function serves as a simple test endpoint to verify that the server is running.
+
+    Returns:
+        str: A welcome message.
+
+    """
     return 'Hello Group 9' # Output on HTTP page 
    
-# Route that reacts when "input" is given such as webhooks or requests
+
 @app.route('/webhook', methods=['POST'])
 def post_webhook():
+    """
+    
+      Processes incoming webhook requests from GitHub.
+
+      Extracts repository details, clones the repository, runs tests and API Connection for return messages 
+
+    
+        Returns : 
+            flask.Response: A JSON respons with operation status
+    
+    """
     data = request.get_json()
     if not data:
         return jsonify({'error': 'No JSON payload provided'}), 400
@@ -39,6 +58,7 @@ def post_webhook():
     os.makedirs(temp_dir, exist_ok=True)
 
     try:
+        # Clone repository and check out the specified commit 
         print(f"Cloning repository to {temp_dir}")
         repo = git.Repo.clone_from(repo_url, temp_dir)
         repo.git.checkout(commit_id)
