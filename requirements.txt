@@ -1,3 +1,5 @@
 # File for listing the packages needed for the build
 flask>=2.0.0
 pytest>=8.0.0
+pdoc>=14.0.0
+pip>=23.0
