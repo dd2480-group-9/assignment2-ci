@@ -10,7 +10,9 @@ setup(
     packages=find_packages(),        # Automatically find Python packages
     install_requires=[
         "flask>=2.0.0",             # Match dependencies in requirements.txt
-        "pytest>=8.0.0"
+        "pytest>=8.0.0",
+        "pdoc>=14.0.0",
+        "pip>=23.0"
     ],
     python_requires=">=3.13",
 )
