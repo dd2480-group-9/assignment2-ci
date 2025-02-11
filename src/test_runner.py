@@ -9,8 +9,9 @@ Usage:
         $ python test_runner.py
 """
 import subprocess
+from pathlib import Path
 
-def run_all_tests() -> tuple[bool, str]:
+def run_all_tests(absPath) -> tuple[bool, str]:
     """
     Runs all tests in the ./tests folder using pytest.
 
@@ -21,7 +22,7 @@ def run_all_tests() -> tuple[bool, str]:
     """
    
     # Defines the command to run on ./tests folder.
-    cmd = ["pytest", "./tests"] 
+    cmd = ["pytest", absPath +"/tests"] 
 
     # Executes the command, captures the output and keeps it as string/
     process = subprocess.run(cmd, capture_output=True, text=True)
@@ -36,7 +37,7 @@ def run_all_tests() -> tuple[bool, str]:
 
 if __name__ == '__main__':
     # If this module is executed directly, run all tests.
-    passed, logs = run_all_tests()
+    passed, logs = run_all_tests(str(Path.cwd()))
     print("Tests passed:", passed)
     print("Logs:")
     print(logs)
