@@ -61,5 +61,5 @@ This workflow ensured an organized and efficient development process.
 - **Alexandra Ejnervall**: GitHub API Connection for commit status updates
 - **Eren Özogul**: 
 - **Ryll Åman**: API documentation generation and structure.
-- **Sebastian Kristoffersson**: 
+- **Sebastian Kristoffersson**: Server implementation and browser. 
 - **Youngbin Pyo**: 

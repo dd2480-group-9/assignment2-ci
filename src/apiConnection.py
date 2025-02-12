@@ -1,10 +1,10 @@
 import requests
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
-load_dotenv()
+#load_dotenv()
 
-# TODO: to be changed dynamically, based on test function
+
 repo = "assignment2-ci"
 repoOwner = "dd2480-group-9"
 commitSHA = "a668da4f96de41c8c0225b8ceb14cf4212909923" 
@@ -50,4 +50,7 @@ def setCommitStatus(commitSHA, repo, repoOwner, state, description):
 
 if __name__ == "__main__":
     setCommitStatus(commitSHA, repo, repoOwner, state, description)
+ 
+
+
 
