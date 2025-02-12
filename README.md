@@ -26,6 +26,7 @@ Prerequisites:
   - GitHub personal access token
   - .env file: TOKEN = your_personal_access_token
 
+  The testing for the function was done through the use of the **patch** decorator and **MagicMock** subclass in the **unittest.mock** library. 
 
 
 ## Documentation
