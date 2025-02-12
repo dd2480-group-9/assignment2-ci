@@ -6,10 +6,10 @@ import os
 import shutil
 from flask import Flask, request, jsonify   # Importing flask 
 import json                                 # Importing json
-import git # gitpython
-from apiConnection import setCommitStatus
+import git                                  # gitpython
+from apiConnection import setCommitStatus   # Importing own module for Git connection
 
-app = Flask(__name__)  # Creates one instance of flask
+app = Flask(__name__)                       # Creates one intance of flask
 
 
 @app.route('/')
