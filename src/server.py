@@ -7,6 +7,7 @@ import shutil
 from flask import Flask, request, jsonify   # Importing flask 
 import json                                 # Importing json
 import git # gitpython
+from apiConnection import setCommitStatus
 
 app = Flask(__name__)  # Creates one instance of flask
 
@@ -38,7 +39,7 @@ def post_webhook():
             flask.Response: A JSON respons with operation status
     
     """
-    data = request.get_json()
+    data = request.get_json()  
     if not data:
         return jsonify({'error': 'No JSON payload provided'}), 400
 
@@ -46,6 +47,8 @@ def post_webhook():
     repo_info = data.get('repository')
     repo_url = repo_info.get('clone_url')
     commit_id = data.get('after')  # The commit SHA after the push
+    repo_owner = repo.info.get('owner',{}.get('login'))
+    repo_name = repo_info.get('name')
 
 
     if not repo_info:
@@ -72,12 +75,27 @@ def post_webhook():
         repo = git.Repo.clone_from(repo_url, temp_dir)
         repo.git.checkout(commit_id)
         
+        
         print(f"Checked out commit {commit_id}")
         
         # Add tests and stuff here
+        status = True; #Placeholder for testing
+
+        if status == True: 
+            description = 'All tests passed'
+            state = True
+        elif status == False: 
+            state = False
+            description = 'One or more tests has failed' 
+
+        
+        setCommitStatus(commit_id, repo_name , repo_owner, state,description)
         
         status = 'ok'
         output = f"Checked out commit {commit_id}"
+
+
+        
 
     except Exception as e:
         status = 'error'
