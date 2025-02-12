@@ -59,7 +59,7 @@ This workflow ensured an organized and efficient development process.
 
 ### Statement of contribution
 - **Alexandra Ejnervall**: GitHub API Connection for commit status updates
-- **Eren Özogul**: 
+- **Eren Özogul**: Test function and logging
 - **Ryll Åman**: API documentation generation and structure.
 - **Sebastian Kristoffersson**: 
 - **Youngbin Pyo**: 
