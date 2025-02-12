@@ -106,7 +106,7 @@ def get_build_details(build_id):
     if not build:
         return jsonify({'error': 'Build not found'}), 404
     return jsonify(build), 200
-
+ 
 
 if __name__ == '__main__':
     app.run(debug=True, port = 8009, host='0.0.0.0') 
