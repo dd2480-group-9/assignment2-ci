@@ -47,7 +47,7 @@ def post_webhook():
     repo_info = data.get('repository')
     repo_url = repo_info.get('clone_url')
     commit_id = data.get('after')  # The commit SHA after the push
-    repo_owner = repo.info.get('owner',{}.get('login'))
+    repo_owner = repo_info.get('owner',{}.get('login'))
     repo_name = repo_info.get('name')
 
 
