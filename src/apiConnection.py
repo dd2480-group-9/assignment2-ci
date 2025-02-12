@@ -1,5 +1,8 @@
 import requests
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # TODO: to be changed dynamically, based on test function
 repo = "assignment2-ci"

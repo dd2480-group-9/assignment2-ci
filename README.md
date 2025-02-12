@@ -15,7 +15,10 @@
   ```
 ### API Connection for commit status updates
 
-The setCommitStatus function updates commit statuses using the GitHub API. 
+The setCommitStatus function updates commit statuses using the **GitHub REST API**
+### ** API Endpoint**  
+```http
+POST https://api.github.com/repos/OWNER/REPO/statuses/SHA
 
 Prerequisites: 
 
