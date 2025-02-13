@@ -66,4 +66,4 @@ This workflow ensured an organized and efficient development process.
 - **Eren Özogul**: Test function and logging
 - **Ryll Åman**: API documentation generation and structure.
 - **Sebastian Kristoffersson**: Server implementation and browser.
-- **Youngbin Pyo**: Package Handler
+- **Youngbin Pyo**: Package Handler setup
