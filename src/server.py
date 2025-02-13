@@ -7,8 +7,8 @@ import shutil
 from flask import Flask, request, jsonify   # Importing flask 
 import json                                 # Importing json
 import git # gitpython
-from logger import BuildHistoryManager
-from test_runner import run_all_tests
+from src.logger import BuildHistoryManager
+from src.test_runner import run_all_tests
 
 
 app = Flask(__name__)  # Creates one instance of flask
