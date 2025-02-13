@@ -3,3 +3,6 @@ flask>=2.0.0
 pytest>=8.0.0
 pdoc>=14.0.0
 pip>=23.0
+GitPython>=3.1.44
+requests>=2.32.3
+python-dotenv>=1.0.1

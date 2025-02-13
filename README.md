@@ -15,7 +15,10 @@
   ```
 ### API Connection for commit status updates
 
-The setCommitStatus function updates commit statuses using the GitHub API. 
+The setCommitStatus function updates commit statuses using the **GitHub REST API**
+### ** API Endpoint**  
+```http
+POST https://api.github.com/repos/OWNER/REPO/statuses/SHA
 
 Prerequisites: 
 
@@ -23,6 +26,7 @@ Prerequisites:
   - GitHub personal access token
   - .env file: TOKEN = your_personal_access_token
 
+  The testing for the function was done through the use of the **patch** decorator and **MagicMock** subclass in the **unittest.mock** library. 
 
 
 ## Documentation
@@ -59,7 +63,7 @@ This workflow ensured an organized and efficient development process.
 
 ### Statement of contribution
 - **Alexandra Ejnervall**: GitHub API Connection for commit status updates
-- **Eren Özogul**: 
+- **Eren Özogul**: Test function and logging
 - **Ryll Åman**: API documentation generation and structure.
-- **Sebastian Kristoffersson**: Server implementation and browser. 
-- **Youngbin Pyo**: 
+- **Sebastian Kristoffersson**: Server implementation and browser.
+- **Youngbin Pyo**: Package Handler setup
