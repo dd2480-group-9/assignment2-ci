@@ -62,4 +62,4 @@ This workflow ensured an organized and efficient development process.
 - **Eren Özogul**: 
 - **Ryll Åman**: API documentation generation and structure.
 - **Sebastian Kristoffersson**: 
-- **Youngbin Pyo**: 
+- **Youngbin Pyo**: Package Handler setup
