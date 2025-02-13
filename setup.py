@@ -14,7 +14,8 @@ setup(
         "pdoc>=14.0.0",
         "pip>=23.0",
         "GitPython>=3.1.44",
-        "requests>=2.32.3"
+        "requests>=2.32.3",
+        "python-dotenv>=1.0.1"
     ],
     python_requires=">=3.13",
 )
