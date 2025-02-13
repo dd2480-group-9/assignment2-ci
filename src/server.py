@@ -51,10 +51,9 @@ def post_webhook():
         return jsonify({'error': 'Repository info not found in payload'}), 400
     
     repo_url = repo_info.get('clone_url')
+    commit_id = data.get('after')  # The commit SHA after the push
     if not repo_url or not commit_id:
         return jsonify({'error': 'Repository URL or commit ID missing'}), 400
-    
-    commit_id = data.get('after')  # The commit SHA after the push
     repo_owner = repo_info.get('owner',{}).get('login')
     repo_name = repo_info.get('name')
     pusher_name = data.get("pusher", {}).get("name")     
@@ -86,7 +85,9 @@ def post_webhook():
             description = 'One or more tests has failed' 
 
         setCommitStatus(commit_id, repo_name , repo_owner, state, description)
+        status = 'ok'
         output = f"Checked out commit {commit_id}"
+        
     except Exception as e:
         status = 'error'
         output = str(e)
