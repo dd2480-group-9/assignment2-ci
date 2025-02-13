@@ -10,6 +10,6 @@ def test_always_passes():
 
     This test is intentionally designed to pass to check pytest is running properly.
     """
-    assert True, "This test is designed to pass intentionally."
+    assert False, "This test is designed to pass intentionally."
 
 
